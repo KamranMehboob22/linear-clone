@@ -3,9 +3,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden; 
+  background-color: #08090a; /* Good practice to put background here too */
 }
 /* 2. THE DARK BACKGROUND */
 .linear-container {
@@ -230,7 +233,7 @@
     border: none;
     padding-left: 20px;
   }
-  
+
    /* Show the buttons in the mobile menu */
   .mobile-buttons {
     display: flex;
@@ -279,6 +282,7 @@
   letter-spacing: -1.5px;
   line-height: 1.1;
   margin-bottom: 23px;
+  padding: 4px 18px;
   background: linear-gradient(to right, #fff, #b4bcd0);
   background-clip: text;
   -webkit-background-clip: text;
