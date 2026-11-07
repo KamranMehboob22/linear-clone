@@ -3,11 +3,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
 }
 
 body {
-  overflow-x: hidden; /* Moved here to prevent horizontal scrolling safely */
+  overflow-x: hidden;
   background-color: #08090a;
 }
 
@@ -19,7 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow: hidden; REMOVED - It breaks the mobile dropdown menu */
 }
 
 /* 3. THE NAVBAR */
@@ -35,12 +36,9 @@ body {
 
 .navbar .logo {
   font-weight: 600;
-  font-family: inherit;
   font-size: 22px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #f7f8f8;
   gap: 8px;
 }
 .logo-icon {
@@ -55,7 +53,7 @@ body {
   text-decoration: none;
   color: #8a8f98;
   font-size: 14px;
-  transition: color 0.3s ease; /* Fixed typo: added 's' to 0.3s */
+  transition: color 0.3s ease;
   padding: 8px 10px;
 }
 .nav-links a:hover,
@@ -64,8 +62,10 @@ body {
   background-color: #5c5e62;
   border-radius: 20px;
 }
+
+/* DESKTOP NAV BUTTONS (Hidden by default, shown in Media Query) */
 .nav-buttons {
-  display: flex;
+  display: flex; /* Shown by default */
   align-items: center;
   gap: 16px;
 }
@@ -73,10 +73,7 @@ body {
   color: #f7f8f8;
   text-decoration: none;
   font-size: 16px;
-  margin: 2px 1px;
   padding: 10px 12px;
-  display: flex;
-  gap: 10px;
 }
 
 .signup-btn {
@@ -89,10 +86,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: opacity 0.2s ease;
-  text-decoration: none;
-  text-align: center;
 }
-
 .signup-btn:hover {
   opacity: 0.8;
 }
@@ -103,13 +97,11 @@ body {
   display: flex;
   align-items: center;
 }
-
 .dropdown-trigger {
   cursor: pointer;
 }
-
 .dropdown-menu {
-  position: absolute; 
+  position: absolute;
   top: 100%;
   left: 0;
   background-color: #14151a;
@@ -124,7 +116,6 @@ body {
   margin-top: 15px;
   z-index: 100;
 }
-
 .dropdown-menu::before {
   content: "";
   position: absolute;
@@ -133,7 +124,6 @@ body {
   width: 100%;
   height: 15px;
 }
-
 .dropdown-item {
   display: flex;
   align-items: flex-start;
@@ -143,58 +133,27 @@ body {
   text-decoration: none;
   transition: background-color 0.2s;
 }
-
 .dropdown-item:hover {
   background-color: rgba(255, 255, 255, 0.05);
 }
-
 .dropdown-item .icon {
   font-size: 20px;
 }
-
 .dropdown-item h4 {
   color: #f7f8f8;
   font-size: 14px;
   margin-bottom: 4px;
 }
-
 .dropdown-item p {
   color: #8a8f98;
   font-size: 12px;
   margin: 0;
 }
 
-/* --- MOBILE NAVBAR --- */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: #f7f8f8;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.navbar > .nav-buttons {
-  display: none;
-}
-
-@media (min-width: 769px) {
-  .navbar > .nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .mobile-buttons {
-    display: none;
-  }
-}
-
 /* 4. THE HERO SECTION */
 .hero {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   text-align: center;
   margin-top: 100px;
@@ -202,10 +161,9 @@ body {
   padding: 0 20px;
   width: 100%;
 }
-
 .hero-badge {
   background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Fixed: added '1px solid' */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 6px 14px;
   color: #8a8f98;
@@ -219,20 +177,17 @@ body {
   color: #5e6ad2;
   font-weight: bold;
 }
-
 .hero-title {
   font-size: 64px;
   font-weight: 600;
   letter-spacing: -1.5px;
   line-height: 1.1;
   margin-bottom: 23px;
-  padding: 4px 18px;
   background: linear-gradient(to right, #fff, #b4bcd0);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .hero-subtitle {
   font-size: 20px;
   color: #8a8f98;
@@ -240,7 +195,6 @@ body {
   max-width: 600px;
   margin-bottom: 40px;
 }
-
 .hero-actions {
   display: flex;
   gap: 20px;
@@ -255,9 +209,6 @@ body {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-.primary-btn:hover {
-  background-color: #4b57b0;
-}
 .secondary-btn {
   background-color: transparent;
   color: #f7f8f8;
@@ -267,10 +218,6 @@ body {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.secondary-btn:hover {
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* --- HERO IMAGE / APP WINDOW STYLES --- */
@@ -278,19 +225,16 @@ body {
   margin-top: 60px;
   width: 100%;
   max-width: 1000px;
-  perspective: 1000px;
 }
-
 .app-window {
   background-color: #0d0e12;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   display: flex;
   height: 400px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(94, 106, 210, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
   overflow: hidden;
 }
-
 .app-sidebar {
   width: 200px;
   background-color: #14151a;
@@ -300,36 +244,30 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-
 .sidebar-item {
   color: #8a8f98;
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 6px;
-  cursor: pointer;
 }
 .sidebar-item.active {
   background-color: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
-
 .app-content {
   flex: 1;
   padding: 15px;
   text-align: left;
 }
-
 .app-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 15px;
 }
-
 .app-badge {
   background-color: #5e6ad2;
   color: white;
@@ -337,13 +275,11 @@ body {
   padding: 4px 10px;
   border-radius: 12px;
 }
-
 .issue-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-
 .issue-item {
   display: flex;
   align-items: center;
@@ -353,7 +289,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
 }
-
 .issue-status {
   font-size: 12px;
   font-weight: bold;
@@ -366,13 +301,12 @@ body {
   color: #38a169;
   border-color: rgba(56, 161, 105, 0.3);
 }
-
 .issue-title {
   color: #f7f8f8;
   font-size: 14px;
 }
 
-/* --- FEATURES SECTION STYLES --- */
+/* --- FEATURES SECTION --- */
 .features-section {
   width: 100%;
   max-width: 1000px;
@@ -382,45 +316,32 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 .features-header {
   text-align: center;
   margin-bottom: 60px;
 }
-
 .features-header h2 {
   font-size: 36px;
-  font-weight: 600;
   color: #f7f8f8;
   margin-bottom: 16px;
 }
-
 .features-header p {
   font-size: 18px;
   color: #8a8f98;
 }
-
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
 }
-
 .feature-card {
   background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 12px;
   text-align: left;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-.feature-card:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 .feature-icon {
   font-size: 28px;
   margin-bottom: 20px;
@@ -431,16 +352,12 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .feature-card h3 {
   font-size: 18px;
-  font-weight: 600;
   color: #f7f8f8;
   margin-bottom: 12px;
 }
-
 .feature-card p {
   font-size: 15px;
   color: #8a8f98;
@@ -454,28 +371,23 @@ body {
   margin-top: 100px;
   padding: 0 20px;
 }
-
 .cta-box {
   background: linear-gradient(135deg, #14151a 0%, #0d0e12 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 60px 40px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-
 .cta-box h2 {
   font-size: 36px;
   color: #f7f8f8;
   margin-bottom: 16px;
 }
-
 .cta-box p {
   font-size: 18px;
   color: #8a8f98;
   margin-bottom: 30px;
 }
-
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -489,10 +401,9 @@ body {
   padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-/* --- TESTIMONIALS SECTION (ADDED MISSING STYLES) --- */
+/* --- TESTIMONIALS SECTION --- */
 .testimonials-section {
   width: 100%;
   max-width: 1000px;
@@ -502,58 +413,43 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 .testimonials-header {
   text-align: center;
   margin-bottom: 60px;
 }
-
 .testimonials-header h2 {
   font-size: 36px;
-  font-weight: 600;
   color: #f7f8f8;
   margin-bottom: 16px;
 }
-
 .testimonials-header p {
   font-size: 18px;
   color: #8a8f98;
 }
-
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
 }
-
 .testimonial-card {
   background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 12px;
   text-align: left;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-.testimonial-card:hover {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
 .testimonial-card .quote {
   font-size: 16px;
   color: #f7f8f8;
   line-height: 1.5;
   margin-bottom: 24px;
 }
-
 .testimonial-card .user-info {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 .testimonial-card .avatar {
   width: 40px;
   height: 40px;
@@ -566,13 +462,11 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
-
 .testimonial-card .user-info h4 {
   color: #f7f8f8;
   font-size: 15px;
   margin: 0;
 }
-
 .testimonial-card .user-info p {
   color: #8a8f98;
   font-size: 13px;
@@ -587,7 +481,6 @@ body {
   padding: 40px 20px;
   background-color: #08090a;
 }
-
 .footer-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -597,7 +490,6 @@ body {
   flex-wrap: wrap;
   gap: 20px;
 }
-
 .footer-logo {
   font-weight: 600;
   font-size: 16px;
@@ -606,40 +498,56 @@ body {
   gap: 8px;
   color: #f7f8f8;
 }
-
 .footer-links {
   display: flex;
   gap: 24px;
 }
-
 .footer-links a {
   color: #8a8f98;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.2s;
 }
 .footer-links a:hover {
   color: #f7f8f8;
 }
-
 .copyright {
   color: #8a8f98;
   font-size: 14px;
 }
 
+/* Hide mobile menu elements by default on Desktop */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #f7f8f8;
+  font-size: 24px;
+  cursor: pointer;
+}
+.mobile-buttons {
+  display: none;
+}
+
 /* =========================================
-   MOBILE RESPONSIVENESS (ALL FIXES HERE)
+   MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 768px) {
-  /* Navbar Mobile */
+  /* Navbar */
   .navbar {
     padding: 20px;
+  }
+
+  /* Hide desktop buttons, show hamburger */
+  .nav-buttons {
+    display: none;
   }
   .mobile-menu-btn {
     display: block;
   }
+
+  /* Mobile Menu */
   .nav-links {
-    display: none; 
+    display: none;
     position: absolute;
     top: 70px;
     left: 0;
@@ -653,13 +561,8 @@ body {
   .nav-links.mobile-active {
     display: flex;
   }
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border: none;
-    padding-left: 20px;
-  }
+
+  /* Show buttons inside mobile menu */
   .mobile-buttons {
     display: flex;
     flex-direction: column;
@@ -669,22 +572,30 @@ body {
     padding-top: 20px;
   }
 
-  /* Hero Mobile Fix */
-  .hero-title {
-    font-size: 42px; /* Smaller font for mobile */
-    padding: 0 10px;
-  }
-  .hero-title br {
-    display: none; /* Removes the forced line break so it wraps naturally */
+  /* Dropdown inside mobile */
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    padding-left: 20px;
   }
 
-  /* Grid Fixes (Stacks them in 1 column) */
+  /* Hero */
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero-title br {
+    display: none;
+  }
+
+  /* Grids stack in 1 column */
   .features-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Footer Mobile */
+  /* Footer */
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -693,5 +604,18 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items: center;
+  }
+}
+   
+
+/* Fix for the white box on hover */
+.dropdown-trigger {
+  outline: none;
+}
+
+/* Ensure desktop buttons show up */
+@media (min-width: 769px) {
+  .nav-buttons {
+    display: flex;
   }
 }

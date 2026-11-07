@@ -1,39 +1,50 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
       <div className="logo">
         <span className="logo-icon">⬤</span> Linear
       </div>
-      
-      {/* 1. Add the Hamburger Button (only visible on mobile) */}
-      <button 
-        className="mobile-menu-btn" 
+
+      <button
+        className="mobile-menu-btn"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
-        {isMobileMenuOpen ? '✕' : '☰'}
+        {isMobileMenuOpen ? "✕" : "☰"}
       </button>
 
-      {/* 2. Add a dynamic class based on the state */}
-      <div className={`nav-links ${isMobileMenuOpen ? 'mobile-active' : ''}`}>
-        
+      <div className={`nav-links ${isMobileMenuOpen ? "mobile-active" : ""}`}>
         {/* PRODUCTS DROPDOWN */}
-        <div 
+        <div
           className="dropdown-container"
           onMouseEnter={() => setIsProductsOpen(true)}
           onMouseLeave={() => setIsProductsOpen(false)}
         >
-          <a href="#" className="dropdown-trigger">Products ▾</a>
+          <a href="#" className="dropdown-trigger">
+            Products ▾
+          </a>
           {isProductsOpen && (
             <div className="dropdown-menu">
-              <a href="#" className="dropdown-item"><span className="icon">📝</span><div><h4>Issue Tracking</h4><p>Track bugs</p></div></a>
-              <a href="#" className="dropdown-item"><span className="icon">📊</span><div><h4>Project Boards</h4><p>Plan roadmaps</p></div></a>
-               <a href="#" className="dropdown-item">
+              <a href="#" className="dropdown-item">
+                <span className="icon">📝</span>
+                <div>
+                  <h4>Issue Tracking</h4>
+                  <p>Track bugs</p>
+                </div>
+              </a>
+              <a href="#" className="dropdown-item">
+                <span className="icon">📊</span>
+                <div>
+                  <h4>Project Boards</h4>
+                  <p>Plan roadmaps</p>
+                </div>
+              </a>
+              <a href="#" className="dropdown-item">
                 <span className="icon">🤖</span>
                 <div>
                   <h4>Automations</h4>
@@ -45,17 +56,31 @@ const Header = () => {
         </div>
 
         {/* RESOURCES DROPDOWN */}
-        <div 
+        <div
           className="dropdown-container"
           onMouseEnter={() => setIsResourcesOpen(true)}
           onMouseLeave={() => setIsResourcesOpen(false)}
         >
-          <a href="#" className="dropdown-trigger">Resources ▾</a>
+          <a href="#" className="dropdown-trigger">
+            Resources ▾
+          </a>
           {isResourcesOpen && (
             <div className="dropdown-menu">
-              <a href="#" className="dropdown-item"><span className="icon">📚</span><div><h4>Documentation</h4><p>Learn the tools</p></div></a>
-              <a href="#" className="dropdown-item"><span className="icon">💬</span><div><h4>Community</h4><p>Join discussion</p></div></a>
-               <a href="#" className="dropdown-item">
+              <a href="#" className="dropdown-item">
+                <span className="icon">📚</span>
+                <div>
+                  <h4>Documentation</h4>
+                  <p>Learn the tools</p>
+                </div>
+              </a>
+              <a href="#" className="dropdown-item">
+                <span className="icon">💬</span>
+                <div>
+                  <h4>Community</h4>
+                  <p>Join discussion</p>
+                </div>
+              </a>
+              <a href="#" className="dropdown-item">
                 <span className="icon">📰</span>
                 <div>
                   <h4>Blog</h4>
@@ -69,12 +94,22 @@ const Header = () => {
         <a href="#">Customers</a>
         <a href="#">Changelog</a>
         <a href="#">Pricing</a>
-        
-        {/* Move the buttons inside nav-links so they show up in the mobile menu */}
+
+        {/* Buttons inside mobile menu */}
         <div className="mobile-buttons">
-          <a href="#" className="login-link">Log in</a>
+          <a href="#" className="login-link">
+            Log in
+          </a>
           <button className="signup-btn">Sign up</button>
         </div>
+      </div>
+
+      {/* NEW: Desktop buttons outside the nav-links */}
+      <div className="nav-buttons">
+        <a href="#" className="login-link">
+          Log in
+        </a>
+        <button className="signup-btn">Sign up</button>
       </div>
     </nav>
   );
