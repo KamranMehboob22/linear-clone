@@ -8,7 +8,7 @@ return(
   </div>
 
   <h1 className="hero-title">
-  Plan,build and Ship <br/> better software
+  Plan,build and Ship  better software
   </h1>
 
   <p className="hero-subtitle">
